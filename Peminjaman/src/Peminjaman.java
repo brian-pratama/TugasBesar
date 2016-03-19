@@ -41,20 +41,20 @@ public class Peminjaman {
     
     public Barang getBarangPinjamanByIndex(int I)
     {
-        return Barang[I];
+        return pinjaman[I];
     }
     
-    public Barang getBarangPinjamanById(int Id)
+    public Barang getBarangPinjamanById(String Id)
     {
         int i = 0;
-        while ( i <= jumlah_peminjaman && Barang[i].idPeminjaman == Id )
+        while ( i <= jumlah_barang && pinjaman[i].getIdBarang() == Id )
         {
             i++;
         }
         
-        if (Barang[i].idPeminjaman == Id)
+        if (pinjaman[i].getIdBarang() == Id)
         {
-            return Barang[i];
+            return pinjaman[i];
         }
         else
         {
@@ -65,7 +65,7 @@ public class Peminjaman {
     public void addPinjaman(Barang b)
     {
         jumlah_barang++;
-        Barang[jumlah_barang] = b;
+        pinjaman[jumlah_barang] = b;
     }
     
     public void setTanggal(String tanggal)
@@ -93,19 +93,19 @@ public class Peminjaman {
     }
     
     //remove barang by id
-    public void removeBarang(id)
+    public void removeBarang(String id)
     {
-         int i = 0;
-        while ( i <= jumlah_peminjaman && Barang[i].idPeminjaman == Id )
+        int i = 0;
+        while ( i <= jumlah_barang && pinjaman[i].getIdBarang() == id )
         {
             i++;
         }
         
-        if (Barang[i].idPeminjaman == Id)
+        if (pinjaman[i].getIdBarang() == id)
         {
             for(int j = i; j <= jumlah_barang - 1; j++)
             {
-                Barang[j] = Barang[j+1]
+                pinjaman[j] = pinjaman[j+1];
             }
             jumlah_barang--;
         }
