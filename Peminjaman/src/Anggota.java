@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package peminjaman;
+
 
 /**
  *
@@ -43,7 +43,7 @@ public class Anggota extends Orang {
 	}
 	
 	public void ubahStatus(){
-		
+		int 
 	}
 }
 
