@@ -35,15 +35,23 @@ public class Anggota extends Orang {
 	
 	public Peminjaman getPeminjaman(String id_peminjaman){
 		for (int i=0; i<riwayatPinjaman.length;i++){
-			if  (riwayatPinjaman[i].getidPeminjaman()== id_peminjaman){
+			if  (riwayatPinjaman[i].getIdPeminjaman() == id_peminjaman){
 					return riwayatPinjaman[i];
 			}
 		}
 			return null;
 	}
 	
-	public void ubahStatus(){
-		int 
+	public void ubahStatus(String status){
+		int i = 0;
+                if (getPeminjaman(i) != null)
+                {
+                    while(getPeminjaman(i+1) != null)
+                    {
+                        i++;
+                    }
+                    getPeminjaman(i).setStatusPeminjaman(status);
+                }
 	}
 }
 
