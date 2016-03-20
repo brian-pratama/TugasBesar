@@ -18,11 +18,11 @@ import java.util.logging.Logger;
 public class Peminjaman {
     private String idPeminjaman;
     private Barang[] pinjaman;
-    private Date tanggal;
+    static private Date tanggal;
     private int jumlah_barang;
     private String status_peminjaman;
     
-    static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
     
     public void setIdPeminjaman( String id )
     {
@@ -71,9 +71,9 @@ public class Peminjaman {
     public void setTanggal(String tanggal)
     {
         try {
-            this.tanggal = DateFormat.parse(tanggal);
+            this.tanggal = dateFormat.parse(tanggal);
         } catch (ParseException ex) {
-            System.out.println("Format tanggal salah"); 
+            System.out.println("Format tanggal salah."); 
         }
     }
     
