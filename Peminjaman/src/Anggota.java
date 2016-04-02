@@ -15,9 +15,26 @@ import java.text.*;
 public class Anggota extends Orang {
 	private Peminjaman[] riwayatPinjaman = new Peminjaman[100];
 	private String tanggal_gabung;
+        private String id_anggota;
 	private String nama_anggota;
 	private int indeks=0;
-	
+        
+        public void setIdAnggota(String id){
+            id_anggota = id;
+        }
+        
+        public String getIdAnggota(){
+            return id_anggota;
+        }
+        
+        public void setNama(String nama){
+            nama_anggota = nama;
+        }
+        
+        public String getNama(){
+            return nama_anggota;
+        }
+        
 	public void createPinjaman(String tanggal){
 		
             if(indeks<riwayatPinjaman.length){

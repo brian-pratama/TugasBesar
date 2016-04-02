@@ -10,13 +10,18 @@
  * @author Muhamad Rizal M
  */
 public class Petugas extends Orang {
-		private String nama_petugas ;
-		
-	public void setNama(String nama_petugas){
-			this.nama_petugas = nama_petugas;
-	}
+    private String id_petugas;
+    private String nama_petugas ;
+
+    public String getIdPetugas(){
+        return id_petugas;
+    }
+    
+    public void setNama(String nama_petugas){
+	this.nama_petugas = nama_petugas;
+    }
 	
-	public String getNama(){
-			return nama_petugas;
-	}
+    public String getNama(){
+	return nama_petugas;
+    }
 }
