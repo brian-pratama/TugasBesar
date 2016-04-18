@@ -1,3 +1,5 @@
+package Model;
+
 
 import java.util.Random;
 import java.util.Scanner;
@@ -26,6 +28,18 @@ public class Aplikasi {
         + getAnggota( id ) : Anggota
         + deleteAnggota( id )
     */
+    
+    public boolean Login(String username, String password){
+        if (!noUsernameAnggota(username)){
+            if (getAnggota(username).getPassword() == password){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
     
     //cek apakah id anggota sudah ada
     public boolean noIdAnggota(String id){
@@ -106,6 +120,14 @@ public class Aplikasi {
         }
         else
             return null;
+    }
+    
+    public Anggota getAnggota( String username ){
+        for ( int i = 0; i < jumlahAnggota ; i++ ) {
+            if(daftarAnggota[i].getUsername() == username){
+                return daftarAnggota[i];
+            }
+        return null;
     }
     
     public int getIndeksAnggota( String username ){
