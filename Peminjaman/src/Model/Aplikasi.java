@@ -127,6 +127,7 @@ public class Aplikasi {
             if(daftarAnggota[i].getUsername() == username){
                 return daftarAnggota[i];
             }
+        }
         return null;
     }
     

@@ -5,6 +5,11 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Brian
@@ -32,8 +37,8 @@ public class Login extends javax.swing.JFrame {
         lblPassword = new javax.swing.JLabel();
         tfPassword = new javax.swing.JTextField();
         btnMasuk = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblAtau = new javax.swing.JLabel();
+        lblSignUp = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,16 +59,21 @@ public class Login extends javax.swing.JFrame {
         });
 
         btnMasuk.setText("Masuk");
+        btnMasuk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMasukMouseClicked(evt);
+            }
+        });
         btnMasuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMasukActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("atau");
+        lblAtau.setText("atau");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel2.setText("buat akun baru");
+        lblSignUp.setForeground(new java.awt.Color(0, 0, 255));
+        lblSignUp.setText("buat akun baru");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,9 +93,9 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnMasuk)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
+                        .addComponent(lblAtau)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)))
+                        .addComponent(lblSignUp)))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -102,8 +112,8 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMasuk)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(lblAtau)
+                    .addComponent(lblSignUp))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -122,46 +132,95 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMasukActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnMasukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMasukMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMasukMouseClicked
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
+    public JButton getBtnMasuk() {
+        return btnMasuk;
+    }
+
+    public void setBtnMasuk(JButton btnMasuk) {
+        this.btnMasuk = btnMasuk;
+    }
+
+    public JLabel getLblAtau() {
+        return lblAtau;
+    }
+    public void setLblAtau(JLabel lblAtau) {
+        this.lblAtau = lblAtau;
+    }
+
+    public JLabel getLblPassword() {
+        return lblPassword;
+    }
+
+    public void setLblPassword(JLabel lblPassword) {
+        this.lblPassword = lblPassword;
+    }
+
+    public JLabel getLblSignUp() {
+        return lblSignUp;
+    }
+
+    public void setLblSignUp(JLabel lblSignUp) {
+        this.lblSignUp = lblSignUp;
+    }
+
+    public JLabel getLblUsername() {
+        return lblUsername;
+    }
+
+    public void setLblUsername(JLabel lblUsername) {
+        this.lblUsername = lblUsername;
+    }
+
+    public JTextField getTfPassword() {
+        return tfPassword;
+    }
+
+    public void setTfPassword(JTextField tfPassword) {
+        this.tfPassword = tfPassword;
+    }
+
+    public JTextField getTfUsername() {
+        return tfUsername;
+    }
+
+    public void setTfUsername(JTextField tfUsername) {
+        this.tfUsername = tfUsername;
+    }
+    
+    public void addActionListener(ActionListener e){
+        btnMasuk.addActionListener(e);
+    }
+    
+    public void setPassword(String s){
+        tfPassword.setText(s);
+    }
+    
+    public void setUsername(String s){
+        tfUsername.setText(s);
+    }
+    
+    public String getPassword(){
+        return tfPassword.getText();
+    }
+    
+    public String getUsername(){
+        return tfUsername.getText();
+    }
+    
+    public Login(String username, String password){
+        setUsername(username);
+        setPassword(password);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMasuk;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblAtau;
     private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblSignUp;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JTextField tfPassword;
     private javax.swing.JTextField tfUsername;

@@ -6,22 +6,17 @@
 package View;
 
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
 
 /**
  *
  * @author Brian
  */
-public class DataBarangPinjamanAnggota extends javax.swing.JFrame {
+public class DataBarangPeminjaman extends javax.swing.JFrame {
 
     /**
      * Creates new form DataBarangPinjamanAnggota
      */
-    public DataBarangPinjamanAnggota() {
+    public DataBarangPeminjaman() {
         initComponents();
     }
 
@@ -35,13 +30,15 @@ public class DataBarangPinjamanAnggota extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTitle = new javax.swing.JLabel();
-        lblNoPeminjaman = new javax.swing.JLabel();
-        tfNoPeminjaman = new javax.swing.JTextField();
+        lblUsername = new javax.swing.JLabel();
+        tfUsername = new javax.swing.JTextField();
         btnCari = new javax.swing.JButton();
         btnTambah = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDataBarangPinjaman = new javax.swing.JTable();
+        lblTanggal = new javax.swing.JLabel();
+        spTanggal = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,15 +46,20 @@ public class DataBarangPinjamanAnggota extends javax.swing.JFrame {
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Data Barang Pinjaman");
 
-        lblNoPeminjaman.setText("No. peminjaman");
+        lblUsername.setText("Username");
 
-        tfNoPeminjaman.addActionListener(new java.awt.event.ActionListener() {
+        tfUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfNoPeminjamanActionPerformed(evt);
+                tfUsernameActionPerformed(evt);
             }
         });
 
         btnCari.setText("Cari");
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariActionPerformed(evt);
+            }
+        });
 
         btnTambah.setText("Tambah");
         btnTambah.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +103,11 @@ public class DataBarangPinjamanAnggota extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblDataBarangPinjaman);
 
+        lblTanggal.setText("Tanggal");
+
+        spTanggal.setModel(new javax.swing.SpinnerDateModel());
+        spTanggal.setOpaque(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,10 +118,14 @@ public class DataBarangPinjamanAnggota extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNoPeminjaman)
+                        .addComponent(lblUsername)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfNoPeminjaman, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblTanggal)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(spTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnCari)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnTambah)
@@ -128,12 +139,16 @@ public class DataBarangPinjamanAnggota extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(lblTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNoPeminjaman, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfNoPeminjaman, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCari)
-                    .addComponent(btnTambah)
-                    .addComponent(btnHapus))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCari)
+                        .addComponent(spTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnTambah)
+                        .addComponent(btnHapus)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(80, Short.MAX_VALUE))
@@ -142,73 +157,9 @@ public class DataBarangPinjamanAnggota extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public JButton getBtnCari() {
-        return btnCari;
-    }
-
-    public void setBtnCari(JButton btnCari) {
-        this.btnCari = btnCari;
-    }
-
-    public JButton getBtnHapus() {
-        return btnHapus;
-    }
-
-    public void setBtnHapus(JButton btnHapus) {
-        this.btnHapus = btnHapus;
-    }
-
-    public JButton getBtnTambah() {
-        return btnTambah;
-    }
-
-    public void setBtnTambah(JButton btnTambah) {
-        this.btnTambah = btnTambah;
-    }
-
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
-    }
-
-    public JLabel getLblNoPeminjaman() {
-        return lblNoPeminjaman;
-    }
-
-    public void setLblNoPeminjaman(JLabel lblNoPeminjaman) {
-        this.lblNoPeminjaman = lblNoPeminjaman;
-    }
-
-    public JLabel getLblTitle() {
-        return lblTitle;
-    }
-
-    public void setLblTitle(JLabel lblTitle) {
-        this.lblTitle = lblTitle;
-    }
-
-    public JTable getTblDataBarangPinjaman() {
-        return tblDataBarangPinjaman;
-    }
-
-    public void setTblDataBarangPinjaman(JTable tblDataBarangPinjaman) {
-        this.tblDataBarangPinjaman = tblDataBarangPinjaman;
-    }
-
-    public JTextField getTfNoPeminjaman() {
-        return tfNoPeminjaman;
-    }
-
-    public void setTfNoPeminjaman(JTextField tfNoPeminjaman) {
-        this.tfNoPeminjaman = tfNoPeminjaman;
-    }
-
-    private void tfNoPeminjamanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNoPeminjamanActionPerformed
+    private void tfUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfNoPeminjamanActionPerformed
+    }//GEN-LAST:event_tfUsernameActionPerformed
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
         // TODO add your handling code here:
@@ -217,6 +168,10 @@ public class DataBarangPinjamanAnggota extends javax.swing.JFrame {
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHapusActionPerformed
+
+    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCariActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,36 +190,25 @@ public class DataBarangPinjamanAnggota extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DataBarangPinjamanAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataBarangPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DataBarangPinjamanAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataBarangPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DataBarangPinjamanAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataBarangPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DataBarangPinjamanAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataBarangPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DataBarangPinjamanAnggota().setVisible(true);
+                new DataBarangPeminjaman().setVisible(true);
             }
         });
-    }
-    
-    public void addActionListener(ActionListener e){
-        btnCari.addActionListener(e);
-        btnHapus.addActionListener(e);
-        btnTambah.addActionListener(e);
-    }
-    
-    public void setTxtNoPeminjaman(String s){
-        tfNoPeminjaman.setText(s);
-    }
-    
-    public String getTxtNoPeminjaman(){
-        return tfNoPeminjaman.getText();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -272,9 +216,105 @@ public class DataBarangPinjamanAnggota extends javax.swing.JFrame {
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnTambah;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblNoPeminjaman;
+    private javax.swing.JLabel lblTanggal;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JSpinner spTanggal;
     private javax.swing.JTable tblDataBarangPinjaman;
-    private javax.swing.JTextField tfNoPeminjaman;
+    private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
+
+    public void addActionListener(ActionListener e){
+        btnCari.addActionListener(e);
+        btnHapus.addActionListener(e);
+        btnTambah.addActionListener(e);
+    }
+    
+    public void setTxtTfUsername(String s){
+        tfUsername.setText(s);
+    }
+    
+    public String getTxtTfUsername(){
+        return tfUsername.getText();
+    }
+    
+    public javax.swing.JButton getBtnCari() {
+        return btnCari;
+    }
+
+    public void setBtnCari(javax.swing.JButton btnCari) {
+        this.btnCari = btnCari;
+    }
+
+    public javax.swing.JButton getBtnHapus() {
+        return btnHapus;
+    }
+
+    public void setBtnHapus(javax.swing.JButton btnHapus) {
+        this.btnHapus = btnHapus;
+    }
+
+    public javax.swing.JButton getBtnTambah() {
+        return btnTambah;
+    }
+
+    public void setBtnTambah(javax.swing.JButton btnTambah) {
+        this.btnTambah = btnTambah;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(javax.swing.JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public javax.swing.JLabel getLblTanggal() {
+        return lblTanggal;
+    }
+
+    public void setLblTanggal(javax.swing.JLabel lblTanggal) {
+        this.lblTanggal = lblTanggal;
+    }
+
+    public javax.swing.JLabel getLblTitle() {
+        return lblTitle;
+    }
+
+    public void setLblTitle(javax.swing.JLabel lblTitle) {
+        this.lblTitle = lblTitle;
+    }
+
+    public javax.swing.JLabel getLblUsername() {
+        return lblUsername;
+    }
+
+    public void setLblUsername(javax.swing.JLabel lblUsername) {
+        this.lblUsername = lblUsername;
+    }
+
+    public javax.swing.JSpinner getSpTanggal() {
+        return spTanggal;
+    }
+
+    public void setSpTanggal(javax.swing.JSpinner spTanggal) {
+        this.spTanggal = spTanggal;
+    }
+
+    public javax.swing.JTable getTblDataBarangPinjaman() {
+        return tblDataBarangPinjaman;
+    }
+
+    public void setTblDataBarangPinjaman(javax.swing.JTable tblDataBarangPinjaman) {
+        this.tblDataBarangPinjaman = tblDataBarangPinjaman;
+    }
+
+    public javax.swing.JTextField getTfUsername() {
+        return tfUsername;
+    }
+
+    public void setTfUsername(javax.swing.JTextField tfUsername) {
+        this.tfUsername = tfUsername;
+    }
 }
