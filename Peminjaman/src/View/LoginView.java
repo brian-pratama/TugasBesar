@@ -14,12 +14,12 @@ import javax.swing.JTextField;
  *
  * @author Brian
  */
-public class Login extends javax.swing.JFrame {
+public class LoginView extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public Login() {
+    public LoginView() {
         initComponents();
     }
 
@@ -211,7 +211,7 @@ public class Login extends javax.swing.JFrame {
         return tfUsername.getText();
     }
     
-    public Login(String username, String password){
+    public LoginView(String username, String password){
         setUsername(username);
         setPassword(password);
     }
@@ -233,20 +233,20 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new LoginView().setVisible(true);
             }
         });
     }

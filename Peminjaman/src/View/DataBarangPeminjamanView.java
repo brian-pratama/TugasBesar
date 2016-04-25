@@ -11,12 +11,12 @@ import java.awt.event.ActionListener;
  *
  * @author Brian
  */
-public class DataBarangPeminjaman extends javax.swing.JFrame {
+public class DataBarangPeminjamanView extends javax.swing.JFrame {
 
     /**
      * Creates new form DataBarangPinjamanAnggota
      */
-    public DataBarangPeminjaman() {
+    public DataBarangPeminjamanView() {
         initComponents();
     }
 
@@ -190,14 +190,18 @@ public class DataBarangPeminjaman extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DataBarangPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataBarangPeminjamanView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DataBarangPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataBarangPeminjamanView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DataBarangPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataBarangPeminjamanView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DataBarangPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataBarangPeminjamanView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -206,7 +210,7 @@ public class DataBarangPeminjaman extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DataBarangPeminjaman().setVisible(true);
+                new DataBarangPeminjamanView().setVisible(true);
             }
         });
     }

@@ -29,18 +29,6 @@ public class Aplikasi {
         + deleteAnggota( id )
     */
     
-    public boolean Login(String username, String password){
-        if (!noUsernameAnggota(username)){
-            if (getAnggota(username).getPassword() == password){
-                return true;
-            }else{
-                return false;
-            }
-        }else{
-            return false;
-        }
-    }
-    
     //cek apakah id anggota sudah ada
     public boolean noIdAnggota(String id){
         int i;

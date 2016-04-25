@@ -1,5 +1,5 @@
 
-import View.Login;
+import View.LoginView;
 import static sun.security.jgss.GSSUtil.login;
 import Controller.LoginController;
 import Model.Aplikasi;
@@ -22,7 +22,7 @@ public class Driver {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Login loginView = new Login();
+        LoginView loginView = new LoginView();
         Aplikasi appModel = new Aplikasi();
         
         LoginController loginCon = new LoginController();

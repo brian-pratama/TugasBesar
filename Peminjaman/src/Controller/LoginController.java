@@ -5,7 +5,8 @@
  */
 package Controller;
 import Model.Aplikasi;
-import View.Login;
+import Model.Login;
+import View.LoginView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -19,23 +20,35 @@ import static sun.security.jgss.GSSUtil.login;
  */
 public class LoginController implements ActionListener, FocusListener{
     
-    Aplikasi model;
-    Login view;
+    Login model = new Login();
+    LoginView view = new LoginView();
     
-    public LoginController(Aplikasi model){
+    public LoginController(Login model, LoginView view){
       this.model = model;
-      view = new Login();
-      view.setVisible(true);
-      view.addActionListener(this);
+      this.view = view;
     }
-   
-   
     
-    
-    
-    public void updateView(String username, String password){
-        view = new Login(username, password);
+    public void setUsername(String s){
+        model.setUsername(s);
     }
+    
+    public String getUsername(){
+        return model.getUsername();
+    }
+    
+    public void setPassword(String s){
+        model.setPassword(s);
+    }
+    
+    public String getPassword(){
+        return model.getPassword();
+    }
+    
+    public void updateView(){				
+        view.
+   }
+    
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
