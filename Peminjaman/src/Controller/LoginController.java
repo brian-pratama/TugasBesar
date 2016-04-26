@@ -18,51 +18,27 @@ import static sun.security.jgss.GSSUtil.login;
  *
  * @author Brian
  */
-public class LoginController implements ActionListener, FocusListener{
+public class LoginController implements ActionListener{
     
-    Login model = new Login();
-    LoginView view = new LoginView();
+    Aplikasi model;
+    LoginView view;
     
-    public LoginController(Login model, LoginView view){
+    public LoginController(Aplikasi model){
       this.model = model;
-      this.view = view;
+      view = new LoginView();
+      view.setVisible(true);
+      view.addListener(this);
     }
     
-    public void setUsername(String s){
-        model.setUsername(s);
-    }
-    
-    public String getUsername(){
-        return model.getUsername();
-    }
-    
-    public void setPassword(String s){
-        model.setPassword(s);
-    }
-    
-    public String getPassword(){
-        return model.getPassword();
-    }
-    
-    public void updateView(){				
-        view.
-   }
-    
-    
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void focusGained(FocusEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void focusLost(FocusEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actionPerformed(ActionEvent e){
+        Object source = e.getSource();
+        if (source.equals(view.getBtnMasuk())){
+            String username = view.getUsername();
+            String password = view.getPassword();
+            if (model.loginAnggota(username, password) != null){
+                
+            }
+        }
     }
     
 }

@@ -29,6 +29,26 @@ public class Aplikasi {
         + deleteAnggota( id )
     */
     
+    public Anggota loginAnggota(String username, String password){
+        int i;
+        for (i=0; i < jumlahAnggota; i++){
+            if ( (daftarAnggota[i].getUsername() == username) && (daftarAnggota[i].getPassword() == password) ){
+                return daftarAnggota[i];
+            }
+        }
+        return null;
+    }
+    
+    public Petugas loginPetugas(String username, String password){
+        int i;
+        for (i=0; i < jumlahPetugas; i++){
+            if ( (daftarPetugas[i].getUsername() == username) && (daftarPetugas[i].getPassword() == password) ){
+                return daftarPetugas[i];
+            }
+        }
+        return null;
+    }
+    
     //cek apakah id anggota sudah ada
     public boolean noIdAnggota(String id){
         int i;

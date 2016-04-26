@@ -191,7 +191,7 @@ public class LoginView extends javax.swing.JFrame {
         this.tfUsername = tfUsername;
     }
     
-    public void addActionListener(ActionListener e){
+    public void addListener(ActionListener e){
         btnMasuk.addActionListener(e);
     }
     
@@ -211,10 +211,7 @@ public class LoginView extends javax.swing.JFrame {
         return tfUsername.getText();
     }
     
-    public LoginView(String username, String password){
-        setUsername(username);
-        setPassword(password);
-    }
+
     
     /**
      * @param args the command line arguments
