@@ -1,6 +1,7 @@
 package Model;
 
 
+import Model.Barang;
 import java.util.*;
 import java.text.*;
 

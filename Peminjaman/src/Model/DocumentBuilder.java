@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Model.Petugas;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.text.Document;
@@ -23,7 +24,7 @@ import Model.Barang;
 public class DocumentBuilder {
     
     @SuppressWarnings("empty-statement")
-    public static Barang[] readDaftarBarang() throws ParserConfigurationException, SAXException, IOException{
+    public Barang[] readDaftarBarang() throws ParserConfigurationException, SAXException, IOException{
         
         Barang[] barang = new Barang[200];
         
@@ -56,7 +57,7 @@ public class DocumentBuilder {
         return barang;
     }
     
-    public static Petugas[] readDaftarPetugas() throws ParserConfigurationException, SAXException, IOException{
+    public Petugas[] readDaftarPetugas() throws ParserConfigurationException, SAXException, IOException{
         Petugas[] petugas = new Petugas[9];
         
         File fXmlFile = new File("daftarPetugas.xml");

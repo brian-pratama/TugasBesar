@@ -10,7 +10,7 @@ package Model;
  * @author Brian
  */
 public class Login {
-    Aplikasi app = new Aplikasi();
+    Aplikasi
     private String username;
     private String password;
 

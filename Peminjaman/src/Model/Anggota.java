@@ -1,5 +1,6 @@
 package Model;
 
+import Model.Peminjaman;
 import java.util.*;
 import java.text.*;
 
@@ -17,24 +18,15 @@ import java.text.*;
 public class Anggota extends Orang {
 	private Peminjaman[] riwayatPinjaman = new Peminjaman[100];
 	private String tanggal_gabung;
-        private String id_anggota;
-	private String nama_anggota;
+	private String nama;
 	private int indeks=0;
         
-        public void setIdAnggota(String id){
-            id_anggota = id;
-        }
-        
-        public String getIdAnggota(){
-            return id_anggota;
-        }
-        
         public void setNama(String nama){
-            nama_anggota = nama;
+            nama = nama;
         }
         
         public String getNama(){
-            return nama_anggota;
+            return nama;
         }
         
 	public void createPinjaman(String tanggal){

@@ -1,6 +1,7 @@
 package Model;
 
 
+import Model.Anggota;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
@@ -23,9 +24,12 @@ public class Aplikasi {
     private Petugas[] daftarPetugas = new Petugas[9];
     private int jumlahAnggota = 0;
     private int jumlahPetugas = 0;
+    private Data data;
+    DocumentBuilder db = new DocumentBuilder();
     
     public Aplikasi() throws ParserConfigurationException, SAXException, IOException{
-        daftarPetugas = DocumentBuilder.readDaftarPetugas();
+        daftarPetugas = db.readDaftarPetugas();
+        data = new Data();
     }
     
     //*** method ***
@@ -56,6 +60,7 @@ public class Aplikasi {
         return null;
     }
     
+    /*
     //cek apakah id anggota sudah ada
     public boolean noIdAnggota(String id){
         int i;
@@ -66,6 +71,7 @@ public class Aplikasi {
         }
         return true;
     }
+    */
     
     //cek apakah username Anggota sudah ada
     public boolean noUsernameAnggota(String username){
