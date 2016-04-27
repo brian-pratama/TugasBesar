@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Controller;
+import Model.Anggota;
 import Model.Aplikasi;
 import Model.Login;
 import View.LoginView;
@@ -36,6 +37,8 @@ public class LoginController implements ActionListener{
             String username = view.getUsername();
             String password = view.getPassword();
             if (model.loginAnggota(username, password) != null){
+                Anggota a = model.loginAnggota(username, password);
+                new 
                 
             }
         }
