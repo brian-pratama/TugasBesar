@@ -16,7 +16,7 @@ import java.text.*;
  * @author Brian
  */
 public class Peminjaman {
-    private String idPeminjaman;
+    private String id;
     private Barang[] pinjaman;
     static private Date tanggal;
     private int jumlah_barang;
@@ -26,12 +26,12 @@ public class Peminjaman {
     
     public void setIdPeminjaman( String id )
     {
-        idPeminjaman = id;
+        id = id;
     }
     
     public String getIdPeminjaman()
     {
-        return idPeminjaman;
+        return id;
     }
     
     public int getJumlahBarang()

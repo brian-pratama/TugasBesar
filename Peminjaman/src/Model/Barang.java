@@ -11,17 +11,17 @@ package Model;
  * @author Brian
  */
 public class Barang {
-    private String id_barang;
+    private String id;
     private String status_pinjam;
     private String status_kondisi;
     
     public void setIdBarang(String id)
     {
-        id_barang = id;
+        this.id = id;
     }
     
     public String getIdBarang(){
-        return id_barang;
+        return id;
     }
     
     public void setStatusKondisi(String k)

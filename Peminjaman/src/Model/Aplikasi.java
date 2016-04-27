@@ -1,8 +1,11 @@
 package Model;
 
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,6 +23,10 @@ public class Aplikasi {
     private Petugas[] daftarPetugas = new Petugas[9];
     private int jumlahAnggota = 0;
     private int jumlahPetugas = 0;
+    
+    public Aplikasi() throws ParserConfigurationException, SAXException, IOException{
+        daftarPetugas = DocumentBuilder.readDaftarPetugas();
+    }
     
     //*** method ***
     /*

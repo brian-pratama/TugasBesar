@@ -209,7 +209,7 @@ public class DataBarangPinjamanAnggotaView extends javax.swing.JFrame {
         });
     }
     
-    public void addActionListener(ActionListener e){
+    public void addListener(ActionListener e){
         btnCari.addActionListener(e);
     }
     
