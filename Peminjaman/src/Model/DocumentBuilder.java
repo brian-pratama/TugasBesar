@@ -47,8 +47,10 @@ public class DocumentBuilder {
 			Element eElement = (Element) nNode;
 
                         barang[temp].setIdBarang(eElement.getAttribute("id"));
-                        barang[temp].setStatusKondisi(eElement.getElementsByTagName("kondisi").item(0).getTextContent());
-                        barang[temp].setStatusPinjam(eElement.getElementsByTagName("kondisi").item(0).getTextContent());
+                        barang[temp].setNama(eElement.getElementsByTagName("nama").item(0).getTextContent());
+                        barang[temp].setKategori(eElement.getElementsByTagName("kategori").item(0).getTextContent());
+                        barang[temp].setStatusKondisi(eElement.getElementsByTagName("status_kondisi").item(0).getTextContent());
+                        barang[temp].setStatusPinjam(eElement.getElementsByTagName("status_pinjam").item(0).getTextContent());
 		}
 	}
         return barang;

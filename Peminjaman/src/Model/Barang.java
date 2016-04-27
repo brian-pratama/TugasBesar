@@ -12,8 +12,18 @@ package Model;
  */
 public class Barang {
     private String id;
+    private String nama;
+    private String kategori;
     private String status_pinjam;
     private String status_kondisi;
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
     
     public void setIdBarang(String id)
     {
@@ -40,5 +50,13 @@ public class Barang {
     
     public String getStatusPinjam(){
         return status_pinjam;
+    }
+
+    public String getKategori() {
+        return kategori;
+    }
+
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
     }
 }
