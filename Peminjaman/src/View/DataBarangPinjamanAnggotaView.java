@@ -38,8 +38,6 @@ public class DataBarangPinjamanAnggotaView extends javax.swing.JFrame {
         lblNoPeminjaman = new javax.swing.JLabel();
         tfNoPeminjaman = new javax.swing.JTextField();
         btnCari = new javax.swing.JButton();
-        btnTambah = new javax.swing.JButton();
-        btnHapus = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDataBarangPinjaman = new javax.swing.JTable();
 
@@ -58,20 +56,6 @@ public class DataBarangPinjamanAnggotaView extends javax.swing.JFrame {
         });
 
         btnCari.setText("Cari");
-
-        btnTambah.setText("Tambah");
-        btnTambah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTambahActionPerformed(evt);
-            }
-        });
-
-        btnHapus.setText("Hapus");
-        btnHapus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHapusActionPerformed(evt);
-            }
-        });
 
         tblDataBarangPinjaman.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,10 +100,7 @@ public class DataBarangPinjamanAnggotaView extends javax.swing.JFrame {
                         .addComponent(tfNoPeminjaman, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCari)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnTambah)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnHapus)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(80, 80, 80))
         );
         layout.setVerticalGroup(
@@ -131,9 +112,7 @@ public class DataBarangPinjamanAnggotaView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNoPeminjaman, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfNoPeminjaman, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCari)
-                    .addComponent(btnTambah)
-                    .addComponent(btnHapus))
+                    .addComponent(btnCari))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(80, Short.MAX_VALUE))
@@ -148,22 +127,6 @@ public class DataBarangPinjamanAnggotaView extends javax.swing.JFrame {
 
     public void setBtnCari(JButton btnCari) {
         this.btnCari = btnCari;
-    }
-
-    public JButton getBtnHapus() {
-        return btnHapus;
-    }
-
-    public void setBtnHapus(JButton btnHapus) {
-        this.btnHapus = btnHapus;
-    }
-
-    public JButton getBtnTambah() {
-        return btnTambah;
-    }
-
-    public void setBtnTambah(JButton btnTambah) {
-        this.btnTambah = btnTambah;
     }
 
     public JScrollPane getjScrollPane1() {
@@ -210,14 +173,6 @@ public class DataBarangPinjamanAnggotaView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNoPeminjamanActionPerformed
 
-    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTambahActionPerformed
-
-    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnHapusActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -256,8 +211,6 @@ public class DataBarangPinjamanAnggotaView extends javax.swing.JFrame {
     
     public void addActionListener(ActionListener e){
         btnCari.addActionListener(e);
-        btnHapus.addActionListener(e);
-        btnTambah.addActionListener(e);
     }
     
     public void setTxtNoPeminjaman(String s){
@@ -270,8 +223,6 @@ public class DataBarangPinjamanAnggotaView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCari;
-    private javax.swing.JButton btnHapus;
-    private javax.swing.JButton btnTambah;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNoPeminjaman;
     private javax.swing.JLabel lblTitle;

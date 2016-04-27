@@ -36,8 +36,6 @@ public class DataPeminjamanAnggotaView extends javax.swing.JFrame {
 
         lblTitle = new javax.swing.JLabel();
         btnCari = new javax.swing.JButton();
-        btnPinjam = new javax.swing.JButton();
-        btnKembalikan = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDataBarangPinjaman = new javax.swing.JTable();
         lblTanggal = new javax.swing.JLabel();
@@ -53,20 +51,6 @@ public class DataPeminjamanAnggotaView extends javax.swing.JFrame {
         btnCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCariActionPerformed(evt);
-            }
-        });
-
-        btnPinjam.setText("Pinjam");
-        btnPinjam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPinjamActionPerformed(evt);
-            }
-        });
-
-        btnKembalikan.setText("Kembalikan");
-        btnKembalikan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKembalikanActionPerformed(evt);
             }
         });
 
@@ -118,10 +102,7 @@ public class DataPeminjamanAnggotaView extends javax.swing.JFrame {
                         .addComponent(spTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnCari)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPinjam)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnKembalikan)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(80, 80, 80))
         );
         layout.setVerticalGroup(
@@ -130,14 +111,10 @@ public class DataPeminjamanAnggotaView extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(lblTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnCari)
-                        .addComponent(spTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnPinjam)
-                        .addComponent(btnKembalikan)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCari)
+                    .addComponent(spTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(80, Short.MAX_VALUE))
@@ -145,14 +122,6 @@ public class DataPeminjamanAnggotaView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnPinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPinjamActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPinjamActionPerformed
-
-    private void btnKembalikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembalikanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnKembalikanActionPerformed
 
     private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
         // TODO add your handling code here:
@@ -216,22 +185,6 @@ public class DataPeminjamanAnggotaView extends javax.swing.JFrame {
         this.btnCari = btnCari;
     }
 
-    public JButton getBtnKembalikan() {
-        return btnKembalikan;
-    }
-
-    public void setBtnKembalikan(JButton btnKembalikan) {
-        this.btnKembalikan = btnKembalikan;
-    }
-
-    public JButton getBtnPinjam() {
-        return btnPinjam;
-    }
-
-    public void setBtnPinjam(JButton btnPinjam) {
-        this.btnPinjam = btnPinjam;
-    }
-
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
@@ -274,14 +227,10 @@ public class DataPeminjamanAnggotaView extends javax.swing.JFrame {
 
     public void addActionListener(ActionListener e){
         btnCari.addActionListener(e);
-        btnKembalikan.addActionListener(e);
-        btnPinjam.addActionListener(e);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCari;
-    private javax.swing.JButton btnKembalikan;
-    private javax.swing.JButton btnPinjam;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTanggal;
     private javax.swing.JLabel lblTitle;
